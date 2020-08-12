@@ -1,9 +1,10 @@
 <template>
-  <div>{{myFunc()}}</div>
+  <div>{{setup()}}</div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { ApiService } from '../services/api';
 
 @Options({
   props: {
@@ -11,15 +12,20 @@ import { Options, Vue } from 'vue-class-component';
   }
 })
 export default class DisplayWeatherComponent extends Vue {
-  msg!: string;
-  // console.log("hello display");
   t: number = 2 + 2;
-  /*msg!: string*/
 
+  setup(): void{
+    console.log("This merely exists to run setup on the component");
+    this.myFunc();
+    this.myFunc2();
+  }
   
-  myFunc(): string {
-      console.log('Hello world');
-      return "Hello Vue";
+  myFunc(): void {
+      console.log('Hello world '+this.t);
+      // return "Hello Vue";
+  }
+  myFunc2(): void {
+    console.log( "This is the Api key: " ,new ApiService().API_KEY);
   }
 }
 </script>
