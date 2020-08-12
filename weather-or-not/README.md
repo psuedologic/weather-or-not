@@ -1,5 +1,13 @@
 # weather-or-not
 
+## Skills to Practice
+- Vue
+- Webpack
+- Typescript
+- TypeORM
+- SPA
+
+
 ## Project setup
 ```
 npm install
