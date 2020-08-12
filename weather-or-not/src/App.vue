@@ -8,12 +8,10 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from './components/HelloWorld.vue';
-import DisplayWeatherComponent from './components/DisplayWeatherComponent.vue'
 
 @Options({
   components: {
     HelloWorld,
-    DisplayWeatherComponent
   },
 })
 export default class App extends Vue {}
