@@ -1,6 +1,7 @@
 <template>
-  <div>{{setup()}}</div>
-  <div>{{temperature}}</div>
+  <div>
+    <div>{{temperature}}</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,15 +26,12 @@ export default class DisplayWeatherComponent extends Vue {
     console.log("On display weather component creation")
 
     this.myFunc();
-    this.myFunc2();
   }
 
 myFunc(): void {
       console.log('Hello world');
       // return "Hello Vue";
   }
-myFunc2(): void {
-    console.log( "This is the Api key: " ,new ApiService().API_KEY);
-  }
+
 }
 </script>

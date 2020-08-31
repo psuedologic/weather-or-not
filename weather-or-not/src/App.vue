@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-    <SearchComponent/>
-    <DisplayWeatherComponent/>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <SearchComponent />
+    <DisplayWeatherComponent />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from './components/HelloWorld.vue';
+import SearchComponent from './components/SearchComponent.vue';
 import DisplayWeatherComponent from './components/DisplayWeatherComponent.vue'
 
 @Options({
   components: {
     HelloWorld,
-    DisplayWeatherComponent
+    DisplayWeatherComponent,
+    SearchComponent
   },
 })
 export default class App extends Vue {}

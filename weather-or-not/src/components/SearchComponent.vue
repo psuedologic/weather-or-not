@@ -1,9 +1,11 @@
 <template>
-  <div>{{setup()}}</div>
+  <div></div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { ApiService } from '../services/api';
+import { BehaviorSubject, Subscription } from "rxjs";
 
 @Options({
   props: {
@@ -12,8 +14,13 @@ import { Options, Vue } from 'vue-class-component';
 })
 export default class SearchComponent extends Vue {
 
-setup(): void{
-
+created(): void{
+  console.log("on search weather component created")
+  const weatherData: BehaviorSubject<Subscription> = new ApiService().dataSubject
+  weatherData.subscribe(message => {
+    console.log("weatherDataMessage:", message)
+  })
+  
   }
 }
 </script>
